@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RecallPro — ARVION</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header><div class="brand">Recall<span>Pro</span></div><button class="icon">⚙</button></header>
+  <main>
+    <section class="hero"><div><h1>Your day, remembered.</h1><p>Set it once. Recall it when it matters.</p></div></section>
+    <div class="stats">
+      <div><b>5</b><small>Today</small></div><div><b>2</b><small>Upcoming</small></div><div class="danger"><b>1</b><small>Emergency</small></div>
+    </div>
+    <div class="filters"><button class="active">All</button><button>Normal</button><button>Emergency</button></div>
+    <h2>Upcoming</h2>
+    <div id="list"></div>
+  </main>
+  <button class="fab" onclick="openModal()">＋ <span>Reminder</span></button>
+  <footer>MADE BY ARVION</footer>
+</div>
+
+<div id="modal" class="modal hidden">
+ <div class="sheet">
+  <div class="sheethead"><h2>New reminder</h2><button onclick="closeModal()">✕</button></div>
+  <label>What do you need to remember?</label><input id="title" placeholder="e.g. Study Physics">
+  <label>Notes</label><textarea id="note" placeholder="Add details..."></textarea>
+  <label>When</label><input id="time" type="datetime-local">
+  <label>Priority</label><div class="priority"><button id="normal" class="selected" onclick="setPriority('normal')">🔔 Normal</button><button id="emergency" onclick="setPriority('emergency')">🚨 Emergency</button></div>
+  <button class="save" onclick="saveReminder()">Create reminder</button>
+ </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
